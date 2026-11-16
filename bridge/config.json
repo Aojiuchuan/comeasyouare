@@ -1,0 +1,9 @@
+{
+    "port":  8787,
+    "host":  "0.0.0.0",
+    "cwd":  "",
+    "timeoutMs":  120000,
+    "maxOutputBytes":  200000,
+    "allowDangerous":  false,
+    "remoteToken":  ""
+}

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek ⇄ PowerShell 本地桥",
+  "version": "1.1.0",
+  "description": "让 DeepSeek 网页版自动在本机执行 PowerShell 命令，并把输出自动发回，形成自动循环；支持手机遥控。",
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://chat.deepseek.com/*",
+    "http://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "http://chat.deepseek.com/*"
+      ],
+      "js": [
+        "core.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "开关 DeepSeek 自动执行"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
